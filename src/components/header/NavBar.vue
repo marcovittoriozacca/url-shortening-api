@@ -35,8 +35,8 @@ onMounted( () => {
 
 <template>
 
-<header class="fixed top-0 w-full">
-    <nav class="nav-bar px-5 sm:px-0 relative">
+<header class="bg-white fixed top-0 w-full">
+    <nav class="nav-bar px-5 sm:px-0 relative z-50">
         <div class="flex items-center justify-between bg-white pt-8 pb-6">
             <ul class="h-full">
                 <li>
