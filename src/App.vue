@@ -6,6 +6,8 @@
   
   <NavBar/>
 
+  
+
 </template>
 
 <style scoped lang="scss">
