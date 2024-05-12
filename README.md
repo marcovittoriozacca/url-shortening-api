@@ -1,7 +1,7 @@
-# Vue 3 + Vite
+# URL shortening API landing page
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+This was one of my initial attempts at using the Tailwind CSS library and Vue3 with the Composition API, as I've previously only used the Option API.
 
-## Recommended IDE Setup
+It's a straightforward exercise I found on[Frontend Mentor](https://www.frontendmentor.io/challenges/url-shortening-api-landing-page-2ce3ob-G) (click to view the challenge)
 
-- [VS Code](https://code.visualstudio.com/) + [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (previously Volar) and disable Vetur
+The challenge involves creating a website for shortening URLs using the [CleanURI](https://cleanuri.com/) API.
