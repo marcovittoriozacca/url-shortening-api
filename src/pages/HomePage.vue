@@ -1,6 +1,10 @@
 <script setup>
 import CyanButton from '../components/main/CyanButton.vue';
 import ShortenLink from '../components/main/ShortenLink.vue'
+import PreviousLink from '../components/main/PreviousLink.vue';
+
+import { store } from '../store';
+
 </script>
 
 <template>
@@ -29,9 +33,13 @@ import ShortenLink from '../components/main/ShortenLink.vue'
         </section>
 
         <section id="shorten-link">
-            
             <ShortenLink/>
-            
+            <div v-for="(link, index) in store.shortenedLinks" :key="index">
+                <PreviousLink
+                    :long-link = link.longLink
+                    :short-link = link.shortLink
+                />
+            </div>
         </section>
     </main>
 

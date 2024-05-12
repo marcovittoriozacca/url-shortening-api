@@ -1,66 +1,77 @@
 <script setup>
-import CyanButton from './CyanButton.vue';
-import { store } from '../../store.js'
+
+import { store } from '../../store.js';
 import { ref } from 'vue';
 import axios from 'axios';
+import validUrl from 'valid-url';
 
+import CyanButton from './CyanButton.vue';
+
+//variables
 let userLink = ref('');
-let lastShortenedLink = '';
 let error = ref(false);
 
+
+//functions
 async function shortenUrl(){
     error.value = false;
-    const encodedUrl = encodeURIComponent(userLink.value);
-
-
-    if(userLink.value === '' || validateUrl(encodedUrl)){
+    let encodedUrl = '';
+    
+    if(userLink.value === ''){
         error.value = true;
+    }
+    
+    if(validateUrl(userLink.value)){
+        encodedUrl = encodeURIComponent(userLink.value);
     }else{
+        error.value = true;
+    }
+    
+    if(!error.value){
+
         try{
             const response = await axios.post(`https://tinyurl.com/api-create.php?url=${encodedUrl}`);
-            lastShortenedLink = response.data;
-            error.value = false,
-            store.shortenedLinks.unshift(lastShortenedLink);
-            console.log(response)
+            const lastShortenedLink = response.data;
+            error.value = false;
+
+            const newShortLink = {
+                longLink: userLink.value,
+                shortLink: lastShortenedLink
+            }
+
+            store.shortenedLinks.unshift(newShortLink);
+            
+            localStorage.setItem('previousLink', JSON.stringify(store.shortenedLinks));
+            
+            userLink.value = ''
         }catch(error){
             console.error(error);
         }
+
     }
 }
-
+console.log(store.shortenedLinks.length)
 function validateUrl(url){
-    console.log(url);
-    const regex = new RegExp('^(https?://)?([a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}(\\/[a-zA-Z0-9-_.~%&/?]*)?$');
-    return regex.test(url);
+    return validUrl.isUri(url)
 }
 
 </script>
 
 <template>
-
-    <div class="flex flex-col gap-y-5">
-
-        <div class="violet-banner rounded-md m-5">
-            <div class="flex flex-col gap-y-8 p-6">
-                <div>
-                    <input v-model="userLink" class="border-2 w-full py-3 px-5 focus:outline-none focus:ring-2 rounded" :class="[error? 'input-error' : 'input-normal-state']"  type="text" name="url" id="url" placeholder="Shorten a link here...">
-                    <small class="text-red-500" v-if="error">Please add a link here</small>
-                </div>
-                <CyanButton
-                    text = 'Shorten it!'
-                    :animation = true
-                    class="rounded"
-                    @click="shortenUrl"
-                />
+    <div class="violet-banner rounded-md m-5">
+        <div class="flex flex-col gap-y-8 p-6">
+            <div>
+                <input v-model="userLink" class="border-2 w-full py-3 px-5 focus:outline-none focus:ring-2 rounded" :class="[error? 'input-error' : 'input-normal-state']"  type="text" name="url" id="url" placeholder="Shorten a link here...">
+                <small class="text-red-500" v-if="error">Please add a link here</small>
             </div>
-        </div>
-
-        <div v-for="(link, index) in store.shortenedLinks" :key="index">
-            
+            <CyanButton
+                text = 'Shorten it!'
+                :animation = true
+                class="rounded"
+                @click="shortenUrl"
+            />
         </div>
     </div>
-
-    
 </template>
 
 <style lang="scss" scoped>

@@ -9,7 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vueuse/core": "^10.9.0",
     "axios": "^1.6.8",
+    "valid-url": "^1.0.9",
     "vue": "^3.4.21"
   },
   "devDependencies": {
