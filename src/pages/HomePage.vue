@@ -33,13 +33,15 @@ const features = [
 <template>
     
     <main>
-        <section id="CTA" class="mb-12">
+        <section id="CTA" class="mb-12 max-w-[640px] mx-auto">
             <div class="flex flex-col gap-y-8">
-                <div class="overflow-hidden">
-                    <figure class="w-[500px] ml-8">
+
+                <div class="overflow-hidden sm:flex sm:justify-center">
+                    <figure class="w-[500px] ml-8 sm:ml-0">
                         <img class="w-full h-full" src="/images/illustration-working.svg" alt="illustration-working">
                     </figure>
                 </div>
+
                 <div class="flex flex-col text-center gap-y-4 px-5">
                     <SectionText
                         title = 'More than just shorter links'
@@ -58,7 +60,7 @@ const features = [
             </div>
         </section>
 
-        <section id="shorten-link">
+        <section id="shorten-link" class="max-w-[640px] mx-auto">
             <ShortenLink/>
             <div v-for="(link, index) in store.shortenedLinks" :key="index">
                 <PreviousLink
@@ -68,7 +70,7 @@ const features = [
             </div>
         </section>
 
-        <section id="advanced-statistics">
+        <section id="advanced-statistics" class="max-w-[640px] mx-auto">
             <div class="m-5 text-center">
                 <SectionText
                     title = 'Advanced Statistics'

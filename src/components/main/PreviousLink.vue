@@ -28,7 +28,7 @@ watch(() => props.shortLink, (newValue) => {
 </script>
 
 <template>
-    <div class="border border-gray-200 m-5 rounded-md">
+    <div class="border border-gray-200 m-5 sm:m-0 sm:mt-5 max-w-[640px] mx-auto rounded-md">
         <!-- long link -->
         <div class="p-3 font-semibold text-very-dark-blue">
             <h3>{{ longLink }}</h3>

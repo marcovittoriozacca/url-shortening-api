@@ -57,7 +57,7 @@ function validateUrl(url){
 </script>
 
 <template>
-    <div class="violet-banner rounded-md m-5">
+    <div class="violet-banner rounded-md m-5 sm:m-0">
         <div class="flex flex-col gap-y-8 p-6">
             <div>
                 <input v-model="userLink" class="border-2 w-full py-3 px-5 focus:outline-none focus:ring-2 rounded" :class="[error? 'input-error' : 'input-normal-state']"  type="text" name="url" id="url" placeholder="Shorten a link here...">

@@ -31,6 +31,6 @@ button{
 }
 
 .animation{
-    @apply hover:scale-105 transition-transform duration-200 active:scale-100;
+    @apply hover:scale-[103%] transition-transform duration-200 active:scale-100;
 }
 </style>

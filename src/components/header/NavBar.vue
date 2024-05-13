@@ -36,7 +36,7 @@ onMounted( () => {
 <template>
 
 <header class="bg-white fixed top-0 w-full">
-    <nav class="nav-bar px-5 sm:px-0 relative z-50">
+    <nav class="px-5 sm:px-0 relative z-50 max-w-[640px] mx-auto">
         <div class="flex items-center justify-between bg-white pt-8 pb-6">
             <ul class="h-full">
                 <li>
@@ -49,6 +49,17 @@ onMounted( () => {
                     <button @click="openBurgerMenu" class="transition-transform linear active:scale-110">
                         <i class="fas fa-bars text-slate-400 text-2xl"></i>
                     </button>
+                    <!-- <div class="flex items-center gap-x-5">
+                        <a href="#" class="hover:text-[#2acfcf] transition-colors duration-200">Login</a>
+                        <a href="#">
+                            <CyanButton
+                                link = '#'
+                                text = 'Sign Up'
+                                :animation = true
+                            />
+                        </a>
+                    </div> -->
+
                 </li>
             </ul>
         </div>

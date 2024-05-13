@@ -11,10 +11,12 @@ const props = defineProps({
 
 <template>
     <div v-if="index != 0" class="cyan-bar"></div>
-    <div class="card-container">
-        <figure>
-            <img :src="obj.thumb" :alt="obj.title">
-        </figure>
+    <div class="card-container relative">
+        <div class="absolute -top-10">
+            <figure>
+                <img :src="obj.thumb" :alt="obj.title">
+            </figure>
+        </div>
         <div class="text-container">
             <SectionText
                 :title = obj.title
@@ -30,7 +32,7 @@ const props = defineProps({
 @use '../../style/scss/general' as *;
 
 figure{
-    @apply -mt-[12%] bg-red-500 p-5 rounded-full;
+    @apply p-5 rounded-full;
     background-color: $dark-violet;
     img{
         @apply w-11;
@@ -40,7 +42,7 @@ figure{
     @apply rounded-md border flex flex-col items-center;
 }
 .text-container{
-    @apply -mt-2 px-7 py-10;
+    @apply -mt-2 px-7 pt-16 pb-10 sm:pt-20 sm:pb-14;
 }
 .cyan-bar{
     @apply h-24 w-3;
