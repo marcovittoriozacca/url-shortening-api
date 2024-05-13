@@ -86,7 +86,7 @@ function validateUrl(url){
 }
 
 .input-error{
-    @apply border-red-500 focus:ring-red-600 bg-rose-100;
+    @apply border-red-500 focus:ring-red-600 bg-rose-100 placeholder-red-600;
 }
 .input-normal-state{
     @apply focus:ring-[#2acfcf] border-white;
