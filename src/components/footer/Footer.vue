@@ -65,18 +65,18 @@ const footerLinks = [
 <template>
     <footer>
         <section id="footer" class="py-12">
-            <div class="flex flex-col items-center">
+            <div class="flex flex-col items-center lg:flex-row lg:items-start lg:justify-between lg:container lg:mx-auto">
                 <figure class="mb-10">
                     <img src="/images/white-logo.svg" alt="shortly">
                 </figure>
                 <!-- loops for footer links -->
-                <div class="flex flex-col gap-y-5 text-center">
+                <div class="flex flex-col gap-y-5 text-center lg:flex-row lg:gap-x-24">
                     <ul v-for="(link, index) in footerLinks" :key="index">
                         <li class="text-md font-bold mb-3 text-white">
                             {{ link.title }}
                         </li>
                         <li v-for="(sublink, subIndex) in link.sublinks" :key="subIndex" class="mb-3">
-                            <a :href="sublink.url" class="text-gray-500 hover:text-white text-md font-semibold font">
+                            <a :href="sublink.url" class="text-gray-500 cyan-btn text-md font-semibold font">
                                 {{ sublink.name }}
                             </a>
                         </li>
@@ -96,6 +96,10 @@ const footerLinks = [
 
 section#footer{
     background-color: #232027;
+}
+
+.cyan-btn{
+    @apply hover:text-[#2acfcf];
 }
 
 </style>

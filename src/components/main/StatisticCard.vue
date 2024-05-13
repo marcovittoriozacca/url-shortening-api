@@ -7,12 +7,25 @@ const props = defineProps({
     index: Number
 });
 
+const setMarginTop = (id) =>{
+    switch (true) {
+        case id === 0:
+            return 'lg:mt-0';
+        case id === 1:
+            return 'lg:-mb-20';
+        case id === 2:
+            return 'lg:-mb-40';    
+        default:
+            return 'lg:mt-0'
+    }
+} 
+
 </script>
 
 <template>
     <div v-if="index != 0" class="cyan-bar"></div>
-    <div class="card-container relative">
-        <div class="absolute -top-10">
+    <div class="card-container relative" :class="setMarginTop(index)">
+        <div class="absolute -top-10 lg:left-8">
             <figure>
                 <img :src="obj.thumb" :alt="obj.title">
             </figure>
@@ -39,13 +52,13 @@ figure{
     }
 }
 .card-container{
-    @apply rounded-md border flex flex-col items-center;
+    @apply rounded-md flex flex-col items-center bg-white;
 }
 .text-container{
-    @apply -mt-2 px-7 pt-16 pb-10 sm:pt-20 sm:pb-14;
+    @apply -mt-2 px-7 pt-16 pb-10 sm:pt-20 sm:pb-14 lg:text-start;
 }
 .cyan-bar{
-    @apply h-24 w-3;
+    @apply h-24 w-3 lg:h-3 lg:w-24;
     background-color: $cyan;
 
 }

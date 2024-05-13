@@ -57,18 +57,20 @@ function validateUrl(url){
 </script>
 
 <template>
-    <div class="violet-banner rounded-md m-5 sm:m-0">
-        <div class="flex flex-col gap-y-8 p-6">
-            <div>
+    <div class="violet-banner rounded-md m-5 sm:m-0 lg:m-0 lg:mb-5">
+        <div class="flex flex-col gap-y-8 p-6 lg:flex-row lg:gap-x-7 lg:items-center lg:p-14">
+            <div class="flex-1">
                 <input v-model="userLink" class="border-2 w-full py-3 px-5 focus:outline-none focus:ring-2 rounded" :class="[error? 'input-error' : 'input-normal-state']"  type="text" name="url" id="url" placeholder="Shorten a link here...">
                 <small class="text-red-500" v-if="error">Please add a link here</small>
             </div>
-            <CyanButton
-                text = 'Shorten it!'
-                :animation = true
-                class="rounded"
-                @click="shortenUrl"
-            />
+            <div class="lg:w-1/6">
+                <CyanButton
+                    text = 'Shorten it!'
+                    :animation = true
+                    class="rounded-md"
+                    @click="shortenUrl"
+                />
+            </div>
         </div>
     </div>
 </template>
@@ -89,6 +91,13 @@ function validateUrl(url){
 }
 .input-normal-state{
     @apply focus:ring-[#2acfcf] border-white;
+}
+
+@media screen and (min-width : 1024px){
+    .violet-banner{
+        background-image: url('/images/bg-shorten-desktop.svg');
+        background-size: cover;  
+    }
 }
 
 </style>
