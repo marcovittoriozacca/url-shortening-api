@@ -16,7 +16,7 @@ onMounted(() => {
 
 <template>
   
-  <NavBar/>
+  <NavBar class="z-50"/>
 
   <!-- pages -->
   <HomePage/>

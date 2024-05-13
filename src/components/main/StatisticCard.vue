@@ -30,17 +30,17 @@ const props = defineProps({
 @use '../../style/scss/general' as *;
 
 figure{
-    @apply -translate-y-1/2 bg-red-500 p-5 rounded-full;
+    @apply -mt-[12%] bg-red-500 p-5 rounded-full;
     background-color: $dark-violet;
     img{
-        @apply w-10;
+        @apply w-11;
     }
 }
 .card-container{
     @apply rounded-md border flex flex-col items-center;
 }
 .text-container{
-    @apply -mt-2 px-7 pb-10;
+    @apply -mt-2 px-7 py-10;
 }
 .cyan-bar{
     @apply h-24 w-3;

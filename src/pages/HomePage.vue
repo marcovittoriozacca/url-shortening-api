@@ -4,6 +4,7 @@ import ShortenLink from '../components/main/ShortenLink.vue'
 import PreviousLink from '../components/main/PreviousLink.vue';
 import StatisticCard from '../components/main/StatisticCard.vue'
 import SectionText from '../components/main/SectionText.vue'
+import BottomCTA from '../components/main/BottomCTA.vue'
 
 import { store } from '../store';
 
@@ -74,10 +75,10 @@ const features = [
                     paragraph = 'Track how your links are performing across the web with our advanced statistics dashboard.'
                     title-size="text-2xl"
 
-                    class="mt-20 mb-24"
+                    class="mt-20"
                 />
 
-                <div class="flex flex-col items-center">
+                <div class="flex flex-col items-center py-20">
                     <StatisticCard
                     v-for="(feature, index) in features" :key="index"   
                     :obj = feature
@@ -85,8 +86,12 @@ const features = [
                     />
                 </div>
             </div>
-
         </section>
+
+        <section id="bottom-cta">
+            <BottomCTA/>
+        </section>
+
     </main>
 
 
