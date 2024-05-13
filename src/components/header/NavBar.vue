@@ -46,8 +46,8 @@ onMounted( () => {
 
             <ul class="h-full">
                 <li>
-                    <button @click="openBurgerMenu" class="transition-transform linear active:scale-105">
-                        <i class="fas fa-bars text-slate-400 text-3xl"></i>
+                    <button @click="openBurgerMenu" class="transition-transform linear active:scale-110">
+                        <i class="fas fa-bars text-slate-400 text-2xl"></i>
                     </button>
                 </li>
             </ul>
@@ -55,7 +55,7 @@ onMounted( () => {
 
         
         <!-- burger menu -->
-        <div class="absolute left-0 right-0 mx-5 sm:mx-0 pt-5 transition-all duration-[400ms] ease-out z-[-1]" :class="[burgerClicked ? 'top-[72px]' : 'top-[-385px]']">
+        <div class="absolute left-0 right-0 mx-5 sm:mx-0 pt-5 transition-all duration-[400ms] ease-out z-[-1]" :class="[burgerClicked ? 'top-[68px]' : 'top-[-385px]']">
             <ul class="font-bold text-neutral-50 text-center burger-menu-bg rounded-xl py-10 px-10">
                 <li v-for="link in menuLink" class="mb-7">
                     <a :href="link.path">

@@ -1,6 +1,7 @@
 <script setup>
   import NavBar from './components/header/NavBar.vue';
   import HomePage from './pages/HomePage.vue';
+  import Footer from './components/footer/Footer.vue';
   import { store } from './store';
   import { onMounted} from 'vue';
 
@@ -21,6 +22,8 @@ onMounted(() => {
   <!-- pages -->
   <HomePage/>
   
+  <!-- general footer -->
+  <Footer/>
 
 </template>
 

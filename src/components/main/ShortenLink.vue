@@ -50,7 +50,6 @@ async function shortenUrl(){
 
     }
 }
-console.log(store.shortenedLinks.length)
 function validateUrl(url){
     return validUrl.isUri(url)
 }
