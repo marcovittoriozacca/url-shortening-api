@@ -1,6 +1,6 @@
 # URL shortening API landing page
 
-This was one of my initial attempts at using the Tailwind CSS library and Vue3 with the Composition API, as I've previously only used the Option API.
+This was one of my first attempts at using the Tailwind CSS library and Vue3 with the Composition API, as I've previously only used the Option API with Bootstrap.
 
 It's a straightforward exercise I found on[Frontend Mentor](https://www.frontendmentor.io/challenges/url-shortening-api-landing-page-2ce3ob-G) (click to view the challenge)
 
