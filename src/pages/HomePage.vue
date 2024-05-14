@@ -36,8 +36,8 @@ const features = [
         <section id="CTA" class="mb-40 max-w-[640px] mx-auto lg:container">
             <div class="flex flex-col gap-y-8 lg:flex-row-reverse lg:items-center">
 
-                <div class="overflow-hidden sm:flex sm:justify-center lg:w-1/2">
-                    <figure class="w-[500px] ml-8 sm:ml-0 sm:w-auto lg:translate-x-20">
+                <div class="overflow-hidden sm:flex sm:justify-center lg:w-1/2 lg:block">
+                    <figure class="w-[500px] ml-8 sm:ml-0 lg:w-full">
                         <img class="w-full h-full" src="/images/illustration-working.svg" alt="illustration-working">
                     </figure>
                 </div>
