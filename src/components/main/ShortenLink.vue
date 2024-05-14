@@ -58,10 +58,10 @@ function validateUrl(url){
 
 <template>
     <div class="violet-banner rounded-md m-5 sm:m-0 lg:m-0 lg:mb-5">
-        <div class="flex flex-col gap-y-8 p-6 lg:flex-row lg:gap-x-7 lg:items-center lg:p-14">
-            <div class="flex-1">
+        <div class="flex flex-col gap-y-9 p-6 lg:flex-row lg:gap-x-7 lg:items-center lg:p-14">
+            <div class="flex-1 relative">
                 <input v-model="userLink" class="border-2 w-full py-3 px-5 focus:outline-none focus:ring-2 rounded" :class="[error? 'input-error' : 'input-normal-state']"  type="text" name="url" id="url" placeholder="Shorten a link here...">
-                <small class="text-red-500" v-if="error">Please add a link here</small>
+                <small v-if="error" :class="{'text-red-500 pointer-events-none select-none absolute left-0 -bottom-5 lg:text-lg lg:-bottom-7' : error}" >Please add a link here</small>
             </div>
             <div class="lg:w-1/6">
                 <CyanButton
