@@ -18,8 +18,6 @@ Unfortunately, the API provided by the challenge seems to not be functioning pro
 - [VueUse](https://vueuse.org/) - Utilities
 - [TailwindCSS](https://tailwindcss.com/) - CSS library
 
-
-
 ## Milestones
 
 - View the optimal layout for the site depending on their device's screen size
@@ -32,6 +30,7 @@ Unfortunately, the API provided by the challenge seems to not be functioning pro
 ## Screenshots
 
 #### Views
+
 <div style="display: flex;">
     <div style="flex: 1; text-align: center;">
     <h2>Desktop</h2>
