@@ -6,7 +6,6 @@
   import { onMounted} from 'vue';
 
 onMounted(() => {
-  console.log(localStorage)
   if(localStorage.getItem('previousLink') !== null){
     store.shortenedLinks = JSON.parse(localStorage.getItem('previousLink'));
   }  
